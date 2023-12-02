@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:HexHome/res/colors.dart';
 
 class HouseCard extends StatefulWidget {
-  // final modelHouse house;
-  const HouseCard({Key? key}) : super(key: key);
+  final modelHouse houseData;
+  const HouseCard({Key? key, required this.houseData}) : super(key: key);
 
   @override
   State<HouseCard> createState() => _HouseCardState();
@@ -23,31 +23,35 @@ class _HouseCardState extends State<HouseCard> {
       ),
       child: Stack(
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 55 / 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.utility.withOpacity(0.4),
-                  spreadRadius: 1,
-                  blurRadius: 20,
-                  offset: const Offset(0, 20),
+          Hero(
+            tag: widget.houseData.title,
+            child: Container(
+              height: MediaQuery.of(context).size.height * 100 / 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.utility.withOpacity(0.4),
+                    spreadRadius: 1,
+                    blurRadius: 20,
+                    offset: const Offset(0, 20),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(27),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(27),
+                child: Image.asset(
+                  widget.houseData.imageAsset,
+                  scale: 1.0,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
-              ],
-              borderRadius: BorderRadius.circular(27),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(27),
-              child: Image.network(
-                'https://i.pinimg.com/564x/2b/0e/d8/2b0ed8eef2ef33eaeb9cca6c3e960384.jpg',
-                width: double.infinity,
-                fit: BoxFit.cover,
               ),
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 55 / 100,
+            height: MediaQuery.of(context).size.height * 100 / 100,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(27),
@@ -106,11 +110,11 @@ class _HouseCardState extends State<HouseCard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Flexible(
+                    Flexible(
                       child: Column(
                         children: [
                           Text(
-                            'Black Modern House',
+                            widget.houseData.title,
                             style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Poppins-ExtraBold',
@@ -152,10 +156,10 @@ class _HouseCardState extends State<HouseCard> {
                   ],
                 ),
                 const SizedBox(
-                  height: 23,
+                  height: 4,
                 ),
-                const Text(
-                  'Broadway Street, New york',
+                Text(
+                  widget.houseData.location,
                   style: TextStyle(
                     color: Colors.white,
                   ),
