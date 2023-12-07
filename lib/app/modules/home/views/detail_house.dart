@@ -5,6 +5,7 @@ import 'package:expandable_text/expandable_text.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class DetailHouse extends StatelessWidget {
   final modelHouse? houseData;
 
@@ -12,6 +13,7 @@ class DetailHouse extends StatelessWidget {
       : houseData = Get.arguments as modelHouse?,
         super(key: key);
 
+  // ignore: unused_field
   GoogleMapController? _mapController;
 
   void _onMapCreated(GoogleMapController controller) {
@@ -32,7 +34,7 @@ class DetailHouse extends StatelessWidget {
   }
 
   Widget _buildMap() {
-    return Container(
+    return SizedBox(
       height: 200,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
@@ -263,7 +265,7 @@ class DetailHouse extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'Description',
                         style: TextStyle(
                           fontSize: 22,
@@ -271,7 +273,7 @@ class DetailHouse extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
@@ -295,19 +297,19 @@ class DetailHouse extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.king_bed_outlined,
                                     color: AppColors.hightlight,
                                     size: 30,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'BedRoom',
                                       style: TextStyle(
                                           color: AppColors.textPrgrf,
@@ -316,9 +318,8 @@ class DetailHouse extends StatelessWidget {
                                           fontWeight: FontWeight.w700),
                                     ),
                                     Text(
-                                      (houseData?.bedrooms.toString() ?? '0') +
-                                          ' Rooms',
-                                      style: TextStyle(
+                                      '${houseData?.bedrooms.toString() ?? '0'} Rooms',
+                                      style: const TextStyle(
                                         fontFamily: 'Poppins-bold',
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20,
@@ -329,7 +330,7 @@ class DetailHouse extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                           SizedBox(
@@ -351,19 +352,19 @@ class DetailHouse extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.bathtub_outlined,
                                     color: AppColors.hightlight,
                                     size: 26,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'BathRoom',
                                       style: TextStyle(
                                           color: AppColors.textPrgrf,
@@ -372,9 +373,8 @@ class DetailHouse extends StatelessWidget {
                                           fontWeight: FontWeight.w700),
                                     ),
                                     Text(
-                                      (houseData?.bathrooms.toString() ?? '0') +
-                                          ' Rooms',
-                                      style: TextStyle(
+                                      '${houseData?.bathrooms.toString() ?? '0'} Rooms',
+                                      style: const TextStyle(
                                         fontFamily: 'Poppins-bold',
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20,
@@ -396,7 +396,7 @@ class DetailHouse extends StatelessWidget {
                           child: ExpandableText(
                             houseData?.description ?? '',
                             textAlign: TextAlign.justify,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'Poppins-Regular',
                               color: AppColors.textPrgrf,
                             ),
@@ -404,7 +404,7 @@ class DetailHouse extends StatelessWidget {
                             collapseText: 'Read less',
                             maxLines: 3,
                             linkColor: AppColors.hightlight,
-                            linkStyle: TextStyle(
+                            linkStyle: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -446,7 +446,7 @@ class DetailHouse extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                'IDR.' + (houseData?.price?.toString() ?? '0'),
+                                'IDR.${houseData?.price.toString() ?? '0'}',
                                 style: const TextStyle(
                                   fontSize: 25,
                                   fontFamily: 'Poppins-ExtraBold',
@@ -459,7 +459,7 @@ class DetailHouse extends StatelessWidget {
                         const SizedBox(
                           width: 2,
                         ),
-                        Text(
+                        const Text(
                           '/Month',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,

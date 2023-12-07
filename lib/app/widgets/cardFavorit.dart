@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:HexHome/app/models/model_house.dart';
 import 'package:HexHome/res/colors.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,6 @@ class CardFavorit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isFavorite = false;
-
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.20,
       width: double.infinity,
@@ -86,7 +85,7 @@ class CardFavorit extends StatelessWidget {
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 6,
                               ),
                               Text(
@@ -112,10 +111,8 @@ class CardFavorit extends StatelessWidget {
                                 strokeAlign: BorderSide.strokeAlignOutside,
                               ),
                             ),
-                            child: Icon(
-                              isFavorite
-                                  ? Icons.favorite
-                                  : Icons.favorite_border,
+                            child: const Icon(
+                              Icons.favorite,
                               color: Colors.white,
                               size: 25,
                             ),

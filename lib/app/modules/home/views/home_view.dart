@@ -27,6 +27,7 @@ class _HomeViewState extends State<HomeView>
   ];
 
   String? selectedLocation;
+  // ignore: unused_field
   final _location = {
     'Bali',
     'Jawa',
@@ -56,18 +57,18 @@ class _HomeViewState extends State<HomeView>
       case 0:
         return _buildPageView(); // Tampilan daftar rumah
       case 1:
-        return FavoritView();
+        return const FavoritView();
       case 2:
         return _buildCartTab();
       default:
-        return ProfileView();
+        return const ProfileView();
     }
   }
 
   Widget _buildPageView() {
     return Column(
       children: [
-        HeaderHome(),
+        const HeaderHome(),
         Flexible(
           child: SizedBox(
             height: MediaQuery.of(context).size.height * 75 / 100,
@@ -99,7 +100,7 @@ class _HomeViewState extends State<HomeView>
   }
 
   Widget _buildFavoritTab() {
-    return Center(
+    return const Center(
       child: Text(
         'Search Tab Content',
         style: TextStyle(color: Colors.amber),
@@ -108,7 +109,7 @@ class _HomeViewState extends State<HomeView>
   }
 
   Widget _buildCartTab() {
-    return Center(
+    return const Center(
       child: Text(
         'Favorite Tab Content', // Gantilah dengan konten favorit yang sesuai
         style: TextStyle(color: Colors.red),
@@ -127,7 +128,7 @@ class _HomeViewState extends State<HomeView>
               child: TabBarView(
                 controller: _tabController,
                 physics:
-                    NeverScrollableScrollPhysics(), // Tidak dapat menggeser secara langsung
+                    const NeverScrollableScrollPhysics(), // Tidak dapat menggeser secara langsung
                 children: [
                   for (int i = 0; i < _tabs.length; i++) _buildTabContent(i),
                 ],

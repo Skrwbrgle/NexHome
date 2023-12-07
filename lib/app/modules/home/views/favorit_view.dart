@@ -14,6 +14,7 @@ class FavoritView extends StatefulWidget {
 class _FavoritViewState extends State<FavoritView> {
   bool isFavorite = false;
   String? selectedLocation;
+  // ignore: unused_field
   final _location = {
     'Bali',
     'Jawa',
@@ -32,14 +33,14 @@ class _FavoritViewState extends State<FavoritView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            HeaderHome(),
+            const HeaderHome(),
             Flexible(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 30.0),
                     child: Text(
                       "Your's Favorit House",
                       style: TextStyle(
