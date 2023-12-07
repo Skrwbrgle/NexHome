@@ -57,7 +57,7 @@ class _FavoritViewState extends State<FavoritView> {
                       child: PageView.builder(
                         itemCount: dummyHouses.length,
                         clipBehavior: Clip.antiAlias,
-                        controller: PageController(viewportFraction: 0.3),
+                        controller: PageController(viewportFraction: 0.325),
                         scrollDirection: Axis.vertical,
                         padEnds: false,
                         itemBuilder: (context, index) {

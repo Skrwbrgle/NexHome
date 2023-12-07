@@ -1,4 +1,5 @@
 import 'package:HexHome/app/models/model_house.dart';
+import 'package:HexHome/app/modules/home/views/cart_view.dart';
 import 'package:HexHome/app/modules/home/views/favorit_view.dart';
 import 'package:HexHome/app/modules/home/views/profile_view.dart';
 import 'package:HexHome/app/routes/app_pages.dart';
@@ -22,7 +23,7 @@ class _HomeViewState extends State<HomeView>
   final _tabs = [
     {'icon': Icons.home_filled, 'activeIcon': Icons.home_rounded},
     {'icon': Icons.favorite_border_outlined, 'activeIcon': Icons.favorite},
-    {'icon': Icons.shopping_cart_outlined, 'activeIcon': Icons.shopping_cart},
+    {'icon': Icons.chair_outlined, 'activeIcon': Icons.chair_rounded},
     {'icon': Icons.person_outline_outlined, 'activeIcon': Icons.person},
   ];
 
@@ -59,7 +60,7 @@ class _HomeViewState extends State<HomeView>
       case 1:
         return const FavoritView();
       case 2:
-        return _buildCartTab();
+        return const CartView();
       default:
         return const ProfileView();
     }
