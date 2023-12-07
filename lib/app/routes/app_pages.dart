@@ -9,5 +9,6 @@ class AppPages {
 
   static final routes = [
     ...homePages,
+    ...detailHouse,
   ];
 }

@@ -115,11 +115,11 @@ class _HouseCardState extends State<HouseCard> {
                         children: [
                           Text(
                             widget.houseData.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontFamily: 'Poppins-ExtraBold',
-                              fontSize: 25,
-                              fontWeight: FontWeight.w700,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
                         ],
@@ -156,11 +156,11 @@ class _HouseCardState extends State<HouseCard> {
                   ],
                 ),
                 const SizedBox(
-                  height: 4,
+                  height: 10,
                 ),
                 Text(
                   widget.houseData.location,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
                 ),

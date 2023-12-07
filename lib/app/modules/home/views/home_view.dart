@@ -1,7 +1,9 @@
 import 'package:HexHome/app/models/model_house.dart';
+import 'package:HexHome/app/routes/app_pages.dart';
 import 'package:HexHome/app/widgets/houseCard.dart';
 import 'package:HexHome/res/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -54,6 +56,7 @@ class _HomeViewState extends State<HomeView>
         child: Column(
           children: [
             Padding(
+              // ignore: prefer_const_constructors
               padding: EdgeInsets.only(
                 left: 25,
                 right: 25,
@@ -205,6 +208,14 @@ class _HomeViewState extends State<HomeView>
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.utility.withOpacity(0.1),
+                          spreadRadius: -3,
+                          blurRadius: 10,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
                     ),
                     alignment: Alignment.center,
                     child: Stack(
@@ -225,7 +236,7 @@ class _HomeViewState extends State<HomeView>
                                 print('Filter clicked');
                               },
                               child: const Icon(
-                                Icons.filter_list_rounded,
+                                Icons.dns_rounded,
                                 color: AppColors.secondary,
                               ),
                             ),
@@ -267,13 +278,18 @@ class _HomeViewState extends State<HomeView>
                   controller: PageController(viewportFraction: 1),
                   itemBuilder: (context, index) {
                     final houseData = dummyHouses[index];
-                    return Padding(
-                      padding: const EdgeInsets.only(
-                        bottom: 40,
-                        left: 25,
-                        right: 25,
+                    return InkWell(
+                      onTap: () {
+                        Get.toNamed(Routes.detailHouse, arguments: houseData);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 40,
+                          left: 25,
+                          right: 25,
+                        ),
+                        child: HouseCard(houseData: houseData),
                       ),
-                      child: HouseCard(houseData: houseData),
                     );
                   },
                 ),
