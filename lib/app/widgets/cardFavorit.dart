@@ -64,63 +64,65 @@ class CardFavorit extends StatelessWidget {
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                houseData.title,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Poppins-ExtraBold',
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w900,
+                child: Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  houseData.title,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: 'Poppins-ExtraBold',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                Text(
+                                  houseData.location,
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Container(
+                              width: 40,
+                              height: kToolbarHeight - 8,
+                              padding: const EdgeInsets.only(top: 2),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: const Color(0xFF59656D).withOpacity(0.9),
+                                border: Border.all(
+                                  color: AppColors.activeTab.withOpacity(0.8),
+                                  width: 7,
+                                  strokeAlign: BorderSide.strokeAlignOutside,
                                 ),
                               ),
-                              const SizedBox(
-                                height: 6,
-                              ),
-                              Text(
-                                houseData.location,
-                                style: const TextStyle(
-                                    color: Colors.white, fontSize: 12),
-                              ),
-                            ],
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: Container(
-                            width: 40,
-                            height: kToolbarHeight - 8,
-                            padding: const EdgeInsets.only(top: 2),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: const Color(0xFF59656D).withOpacity(0.9),
-                              border: Border.all(
-                                color: AppColors.activeTab.withOpacity(0.8),
-                                width: 7,
-                                strokeAlign: BorderSide.strokeAlignOutside,
+                              child: const Icon(
+                                Icons.favorite,
+                                color: Colors.white,
+                                size: 25,
                               ),
                             ),
-                            child: const Icon(
-                              Icons.favorite,
-                              color: Colors.white,
-                              size: 25,
-                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

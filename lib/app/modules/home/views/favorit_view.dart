@@ -14,15 +14,6 @@ class FavoritView extends StatefulWidget {
 class _FavoritViewState extends State<FavoritView> {
   bool isFavorite = false;
   String? selectedLocation;
-  // ignore: unused_field
-  final _location = {
-    'Bali',
-    'Jawa',
-    'Kalimantan',
-    'Sumatera',
-    'Sulawesi',
-    'Papua',
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -50,26 +41,28 @@ class _FavoritViewState extends State<FavoritView> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 58 / 100,
-                    width: double.infinity,
-                    child: Expanded(
-                      child: PageView.builder(
-                        itemCount: dummyHouses.length,
-                        clipBehavior: Clip.antiAlias,
-                        controller: PageController(viewportFraction: 0.325),
-                        scrollDirection: Axis.vertical,
-                        padEnds: false,
-                        itemBuilder: (context, index) {
-                          final houseData = dummyHouses[index];
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 10),
-                            child: CardFavorit(
-                              houseData: houseData,
-                            ),
-                          );
-                        },
+                  Flexible(
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 58 / 100,
+                      width: double.infinity,
+                      child: Flexible(
+                        child: PageView.builder(
+                          itemCount: dummyHouses.length,
+                          clipBehavior: Clip.antiAlias,
+                          controller: PageController(viewportFraction: 0.325),
+                          scrollDirection: Axis.vertical,
+                          padEnds: false,
+                          itemBuilder: (context, index) {
+                            final houseData = dummyHouses[index];
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 10),
+                              child: CardFavorit(
+                                houseData: houseData,
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   )

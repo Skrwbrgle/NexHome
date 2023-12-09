@@ -20,7 +20,6 @@ class CartView extends StatelessWidget {
                 children: [
                   Flexible(
                     child: ClipRRect(
-                      // borderRadius: BorderRadius.circular(27),
                       child: Image.asset(
                         'images/black-modern-house.jpg',
                         fit: BoxFit.cover,
@@ -262,7 +261,7 @@ class CartView extends StatelessWidget {
                                               height: 10,
                                             ),
                                             const StyledDivider(
-                                              color: Colors.grey,
+                                              color: AppColors.hightlight,
                                               height: 50,
                                               thickness: 3,
                                               lineStyle:
@@ -292,7 +291,7 @@ class CartView extends StatelessWidget {
                                               ),
                                             ),
                                             const StyledDivider(
-                                              color: Colors.grey,
+                                              color: AppColors.hightlight,
                                               height: 50,
                                               thickness: 3,
                                               lineStyle:

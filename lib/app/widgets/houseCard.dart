@@ -110,13 +110,13 @@ class _HouseCardState extends State<HouseCard> {
                       ),
                     ],
                   ),
-                  const Spacer(
-                    flex: 3,
-                  ),
-                  Flexible(
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Spacer(
+                          flex: 4,
+                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

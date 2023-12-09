@@ -10,17 +10,27 @@ class HeaderHome extends StatefulWidget {
 
 class _HeaderHomeState extends State<HeaderHome> {
   @override
-  Widget build(BuildContext context) {
-    String? selectedLocation;
-    final _location = {
-      'Bali',
-      'Jawa',
-      'Kalimantan',
-      'Sumatera',
-      'Sulawesi',
-      'Papua',
-    };
+  void initState() {
+    super.initState();
+  }
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  String? selectedLocation;
+  final _location = {
+    'Bali',
+    'Jawa',
+    'Kalimantan',
+    'Sumatera',
+    'Sulawesi',
+    'Papua',
+  };
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
         left: 25,
@@ -72,6 +82,7 @@ class _HeaderHomeState extends State<HeaderHome> {
                     onChanged: (String? value) {
                       setState(() {
                         selectedLocation = value;
+                        print(selectedLocation);
                       });
                     },
                   ),

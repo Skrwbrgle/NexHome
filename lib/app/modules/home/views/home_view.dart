@@ -27,17 +27,6 @@ class _HomeViewState extends State<HomeView>
     {'icon': Icons.person_outline_outlined, 'activeIcon': Icons.person},
   ];
 
-  String? selectedLocation;
-  // ignore: unused_field
-  final _location = {
-    'Bali',
-    'Jawa',
-    'Kalimantan',
-    'Sumatera',
-    'Sulawesi',
-    'Papua',
-  };
-
   @override
   void initState() {
     _tabController = TabController(length: _tabs.length, vsync: this);
@@ -56,7 +45,7 @@ class _HomeViewState extends State<HomeView>
   Widget _buildTabContent(int index) {
     switch (index) {
       case 0:
-        return _buildPageView(); // Tampilan daftar rumah
+        return _buildPageView();
       case 1:
         return const FavoritView();
       case 2:
@@ -97,24 +86,6 @@ class _HomeViewState extends State<HomeView>
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildFavoritTab() {
-    return const Center(
-      child: Text(
-        'Search Tab Content',
-        style: TextStyle(color: Colors.amber),
-      ),
-    );
-  }
-
-  Widget _buildCartTab() {
-    return const Center(
-      child: Text(
-        'Favorite Tab Content', // Gantilah dengan konten favorit yang sesuai
-        style: TextStyle(color: Colors.red),
-      ),
     );
   }
 
